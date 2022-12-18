@@ -29,28 +29,35 @@ function Input() {
 
     return (
         <div>
-            <input type="text" placeholder="Pokemon Name" onChange={(e) =>
-                setsearchItem(e.target.value)}></input>
-            <button onClick={handleClick}>Search</button>
+            <div className='buttonInput'>
+                <button onClick={handleClick}></button>
+                <input type="text" placeholder="Pokemon Name" onChange={(e) =>
+                    setsearchItem(e.target.value)}></input>
+
+            </div>
             <>
+
                 {JSON.stringify(pokemonInfo) !== "[]" ?
-                    <>
+                    <div className='listPosition'>
+                        <ul>
 
-                        <p>HP: {pokemonInfo.stats[0].base_stat}</p>
-                        <p>Attack:{pokemonInfo.stats[1].base_stat} </p>
-                        <p>Defense:  {pokemonInfo.stats[2].base_stat}</p>
-                        <p>Special Attack:{pokemonInfo.stats[3].base_stat}</p>
-                        <p>Special Defense:{pokemonInfo.stats[4].base_stat} </p>
-                        <p>Speed:  {pokemonInfo.stats[5].base_stat}</p>
+                            <li>HP: {pokemonInfo.stats[0].base_stat}</li>
+                            <li>Attack:{pokemonInfo.stats[1].base_stat} </li>
+                            <li>Defense:  {pokemonInfo.stats[2].base_stat}</li>
+                            <li>Special Attack:{pokemonInfo.stats[3].base_stat}</li>
+                            <li>Special Defense:{pokemonInfo.stats[4].base_stat} </li>
+                            <li>Speed:  {pokemonInfo.stats[5].base_stat}</li>
+
+
+                        </ul>
                         <img className="pokemonImage" alt="pokemonImg" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${imageNum}.png`}></img>
-
-                    </>
+                    </div>
                     :
                     <p>Press search to see Pokemon Info</p>
 
                 }
             </>
-        </div>
+        </div >
 
     )
 }

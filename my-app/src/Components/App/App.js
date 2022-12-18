@@ -4,10 +4,9 @@ import Input from '../Input/input';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
 
-      </header>
+    <div className="App">
+      {/* <h1 className='title'>PokeDex</h1> */}
       <Input />
     </div>
   );
