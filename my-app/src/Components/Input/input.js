@@ -7,13 +7,12 @@ function Input() {
     // const API_KEY = "33eb3c70"
     const [pokemonInfo, setPokemonInfo] = useState([])
 
-
+    let text = searchItem;
+    let lowerSearch = text.toLowerCase();
 
     function handleClick() {
-
-
         //console.log(searchItem)
-        let APIcallString = "https://pokeapi.co/api/v2/pokemon/" + searchItem
+        let APIcallString = "https://pokeapi.co/api/v2/pokemon/" + lowerSearch
 
 
         Axios.get(APIcallString).then(function (response) {
@@ -31,7 +30,7 @@ function Input() {
         <div>
             <div className='buttonInput'>
                 <button onClick={handleClick}></button>
-                <input type="text" placeholder="Pokemon Name" onChange={(e) =>
+                <input type="text" onChange={(e) =>
                     setsearchItem(e.target.value)}></input>
 
             </div>
