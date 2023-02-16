@@ -1,14 +1,19 @@
-
+import pokeInfo from '../pokeInfo/pokeInfo';
 import './App.css';
 import Input from '../Input/input';
 
 function App() {
   return (
 
-    <div className="App">
+    <body>
+      <div className='bgImage' />
+
+      <div className="App"></div>
       {/* <h1 className='title'>PokeDex</h1> */}
       <Input />
-    </div>
+      <pokeInfo />
+
+    </body>
   );
 }
 

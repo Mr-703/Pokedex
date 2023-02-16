@@ -9,12 +9,23 @@
 * {
   font-family: f25;
 }
+html,
+body {
+  height: 100%;
+}
 
 html {
-  height: 80%;
-  background-image: url("/Users/ryan/Desktop/Coding/Personal Projects /Pokedex /Pokedex/my-app/public/Pictures/pokedeximg.jpg");
+  scroll-behavior: smooth;
   background-repeat: no-repeat;
+  width: 100vw;
 }
+
+/* .bgImage {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("/Users/ryan/Desktop/Coding/Personal Projects /Pokedex /Pokedex/my-app/public/Pictures/pkb copy.png");
+} */
 
 .App {
   text-align: center;
@@ -30,90 +41,223 @@ html {
   color: white;
 }
 
-.pokemonImage {
-  width: 420px;
-  height: 420px;
-  position: relative;
-  top: 170px;
-  left: 160px;
-}
-
 .title {
   font-family: pokemon;
   color: rgb(255, 203, 5);
   -webkit-text-stroke: 1px rgb(42, 117, 187);
 }
-
-input {
-  background-color: transparent;
-  border-color: transparent;
-  height: 100px;
-  font-size: 90px;
-  color: white;
-  outline: none;
-  padding: 1rem 2 rem;
-  position: relative;
-  top: 40px;
-  left: 117px;
+.buttonInputForm {
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+  justify-content: center;
 }
-.button {
+input {
+  /* background-color: transparent; */
+  /* border-color: transparent; */
+  height: 80px;
+  width: 500px;
+  font-size: 60px;
+  color: rgb(0, 0, 0);
+  margin: 2rem 0;
+
+  /* outline: none; */
+  /* padding: 1rem 2 rem; */
+  text-align: center;
+  justify-content: center;
+}
+.searchButton {
   margin: 2rem 0;
   padding: 1rem 2 rem;
   width: 143px;
-  height: 143px;
+  height: 80px;
   cursor: pointer;
-  background-color: transparent;
-  border-radius: 100%;
-  position: relative;
-  left: 20px;
-  top: -20px;
-  /* border: none; */
+  background-color: red;
+  border: none;
+  transition: 0.2s;
 }
-
+.searchButton:active {
+  transform: scale(0.9);
+}
+.listImagePos {
+  display: flex;
+  align-content: space-between;
+  justify-content: space-evenly;
+  flex-direction: row;
+  padding: 0%;
+  margin: 0%;
+  border: 0px;
+}
 li {
   list-style-type: none;
   display: flex;
   align-items: flex-start;
-  color: white;
+  color: rgb(0, 0, 0);
   -webkit-text-stroke: 0.5px rgb(0, 0, 0);
   font-size: 45px;
+  line-height: 60px;
 }
 
-.listPosition {
-  display: flex;
-  align-content: space-between;
-  flex-direction: row;
+.pokemonImage {
+  width: 360px;
+  height: 360px;
+  justify-content: flex-end;
 }
-.buttonInput {
-  display: flex;
-  flex-direction: row;
-  align-content: flex-start;
+.shinyPokemonImage {
+  width: 360px;
+  height: 360px;
+  justify-content: flex-end;
 }
-
-.purpTest {
-  background-color: blueviolet;
-}
-
-/* #typesImage {
-  width: 420px;
-  height: 420px;
-  position: relative;
-  top: 170px;
-  left: 160px;
-  background-color: blueviolet;
-} */
-
 .typesImageClass {
-  width: 120px;
+  width: 130px;
   height: 40px;
-  position: relative;
-  top: 170px;
-  left: 160px;
+
   border-radius: 24px;
   color: white;
-  outline: 4px;
-  outline-color: black;
-  border: none;
-
+  font-size: 20px;
+  border-color: #000000;
   -webkit-text-stroke: 0.4px rgb(0, 0, 0);
+  letter-spacing: 0.8px;
+
+  border-width: 0 0 3px;
+  /* For providing border to the element */
+  border: 0.5px solid;
+  /* For Padding */
+  padding: 7px;
+  /* Defining box-shadow property inset */
+  box-shadow: 4px 3px 4px 3px rgba(244, 244, 244, 0.46) inset;
+  /* box-sizing: border-box; */
+}
+
+/* CSS */
+/* .button-19 {
+  appearance: button;
+  background-color: #1899d6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: din-round, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 13px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter 0.2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.button-19:after {
+  background-clip: padding-box;
+  background-color: #1cb0f6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.button-19:main,
+.button-19:focus {
+  user-select: auto;
+}
+
+.button-19:hover:not(:disabled) {
+  filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
+}
+
+.button-19:disabled {
+  cursor: auto;
+} */
+
+.imageButtonPos {
+  display: flex;
+  flex-direction: column;
+}
+.buttonRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+/* media query for mobile size accessibility 
+Move input to center
+resize button
+Image next 
+then list of stats  */
+
+@media all and (max-width: 500px) {
+  .buttonInputForm {
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;
+    justify-content: center;
+  }
+  input {
+    /* background-color: transparent; */
+    /* border-color: transparent; */
+    height: 60px;
+    width: 300px;
+    font-size: 40px;
+    color: rgb(0, 0, 0);
+    margin: 2rem 0;
+
+    /* outline: none; */
+    /* padding: 1rem 2 rem; */
+    text-align: center;
+    justify-content: center;
+  }
+  .searchButton {
+    margin: 2rem 0;
+    padding: 1rem 2 rem;
+    width: 143px;
+    height: 60px;
+    cursor: pointer;
+    background-color: red;
+    border: none;
+  }
+  .listImagePos {
+    display: flex;
+    align-content: space-between;
+    justify-content: space-evenly;
+    flex-direction: column-reverse;
+    padding: 0%;
+    margin: 0%;
+    border: 0px;
+  }
+  li {
+    list-style-type: none;
+    display: flex;
+    align-items: flex-start;
+    color: rgb(0, 0, 0);
+    -webkit-text-stroke: 0.5px rgb(0, 0, 0);
+    font-size: 25px;
+    line-height: 45px;
+  }
+
+  .pokemonImage {
+    width: 360px;
+    height: 360px;
+    justify-content: flex-end;
+  }
 }
