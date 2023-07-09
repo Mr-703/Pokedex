@@ -17,3 +17,9 @@ if (pokemonInfo.types[0] === "normal"){
 }
 
 Button onClick function that changes the colour based on name
+
+drop down search function to give hints to user:
+how i think it works;
+Use the fetch of the api again but place inside the input field
+make dropdown of 10 ~ ish results
+only bring up pokimon that follow the order of letters in input

@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import Axios from "axios"
+import pokedexBackShape from '../Input/pokedexBgUpdate.png';
+
+
 
 
 function Input() {
@@ -31,10 +34,8 @@ function Input() {
 
     function handleClick(e) {
 
-
         //console.log(searchItem)
         let APIcallString = "https://pokeapi.co/api/v2/pokemon/" + lowerSearch
-
 
         Axios.get(APIcallString).then(function (response) {
             setPokemonInfo(response.data)
@@ -42,26 +43,33 @@ function Input() {
         }).catch(function (error) {
             console.log(error);
         })
+    }
+    function searchDropdown(e) {
 
+        //console.log(searchItem)
+        let APIcallString = "https://pokeapi.co/api/v2/pokemon/" + lowerSearch
 
+        Axios.get(APIcallString).then(function (response) {
+            setPokemonInfo(response.data)
+            // console.log(response.data.types)
+        }).catch(function (error) {
+            console.log(error);
+        })
     }
     let imageNum = pokemonInfo.id
 
     function changeImageShiny() {
         let img = document.getElementById('pokemonImage');
-        // img.className = "shinyPokemonImage"
         img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${imageNum}.png`
         // console.log("image changing to shiny")
     }
     function changeImageNormal() {
         let img = document.getElementById('pokemonImage');
-        // img.className = "shinyPokemonImage"
         img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${imageNum}.png`
         // console.log("image changing to normal")
     }
     const onFormSubmit = e => {
         e.preventDefault();
-
     }
 
 
@@ -70,43 +78,47 @@ function Input() {
             <form onSubmit={onFormSubmit} className='buttonInputForm' >
                 <input type="text" onChange={(e) =>
                     setsearchItem(e.target.value)}></input>
-                {/*  */}
                 <button className='searchButton' value="Add to do" type="submit" onClick={handleClick}></button>
             </form>
             <>
-
-
-
                 {JSON.stringify(pokemonInfo) !== "[]" ?
                     <div className='listImagePos'>
-                        <ul>
-
-                            <li>HP: {pokemonInfo.stats[0].base_stat}</li>
-                            <li>Attack:{pokemonInfo.stats[1].base_stat} </li>
-                            <li>Defense:  {pokemonInfo.stats[2].base_stat}</li>
-                            <li>Special Attack:{pokemonInfo.stats[3].base_stat}</li>
-                            <li>Special Defense:{pokemonInfo.stats[4].base_stat} </li>
-                            <li>Speed:  {pokemonInfo.stats[5].base_stat}</li>
-
-                        </ul>
-                        <div className='imageButtonPos'>
-                            < div className='buttonRow'>
-                                {pokemonInfo && pokemonInfo.types.map((pokemonObject) => {
-                                    let indexOfType = pokemonTypes.findIndex((obj) => obj.type === pokemonObject.type.name)
-                                    let pokemonTypeNames = pokemonTypes.map((obj) => obj.type)
-                                    // console.log(pokemonTypeNames)
-                                    return pokemonTypeNames.includes(pokemonObject.type.name) && <button style={{ background: pokemonTypes[indexOfType].background_color }} className="typesImageClass" id="typesImage"   >{pokemonObject.type.name.toUpperCase()}</button>
-
-
-                                })}
-                            </div >
+                        <div className='shapes'>
+                            {/* <img className='pokedexBgShape' id="pokedexBgShape" src={pokedexBackShape} alt="bg" /> */}
+                            {/* <div className='leftSquare'></div> */}
+                            {/* <div className='parallelogram'> */}
                             <img className="pokemonImage" id="pokemonImage" alt="pokemonImg" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${imageNum}.png`}></img>
-                            <button onClick={changeImageShiny} >SHINY</button>
-                            <button onClick={changeImageNormal} >NORMAL</button>
+                            {/* </div> */}
+                            {/* <div className='rightRectangle'></div> */}
+                        </div>
+                        <div className="infoBox">
+                            <div className='imageButtonPos'>
+                                < div className='buttonRow'>
+                                    {pokemonInfo && pokemonInfo.types.map((pokemonObject) => {
+                                        let indexOfType = pokemonTypes.findIndex((obj) => obj.type === pokemonObject.type.name)
+                                        let pokemonTypeNames = pokemonTypes.map((obj) => obj.type)
+                                        // console.log(pokemonTypeNames)
+                                        return pokemonTypeNames.includes(pokemonObject.type.name) && <button style={{ background: pokemonTypes[indexOfType].background_color }} className="typesImageClass" id="typesImage">{pokemonObject.type.name.toUpperCase()}</button>
+                                    })}
+                                </div >
+                            </div>
+                            <div className='shinyNormalPos'>
+                                <button className='shinyButton' onClick={changeImageShiny} >SHINY</button>
+                                <button className='normalButton' onClick={changeImageNormal} >NORMAL</button>
+                            </div>
+                            <ul>
+                                <li>HP: {pokemonInfo.stats[0].base_stat}</li>
+                                <li>Attack:{pokemonInfo.stats[1].base_stat} </li>
+                                <li>Defense:  {pokemonInfo.stats[2].base_stat}</li>
+                                <li>Special Attack:{pokemonInfo.stats[3].base_stat}</li>
+                                <li>Special Defense:{pokemonInfo.stats[4].base_stat} </li>
+                                <li>Speed:  {pokemonInfo.stats[5].base_stat}</li>
+                            </ul>
+
                         </div>
                     </div>
                     :
-                    <p>Press search to see Pokemon Info</p>
+                    <p className='emptyPage'>Search to see Pokemon Info</p>
 
                 }
             </>

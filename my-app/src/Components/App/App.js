@@ -1,6 +1,8 @@
-import pokeInfo from '../pokeInfo/pokeInfo';
+// import pokeInfo from '../pokeInfo/pokeInfo';
 import './App.css';
 import Input from '../Input/input';
+
+
 
 function App() {
   return (

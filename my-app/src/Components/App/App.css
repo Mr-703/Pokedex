@@ -18,14 +18,8 @@ html {
   scroll-behavior: smooth;
   background-repeat: no-repeat;
   width: 100vw;
+  background-color: #2e2e2e;
 }
-
-/* .bgImage {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-image: url("/Users/ryan/Desktop/Coding/Personal Projects /Pokedex /Pokedex/my-app/public/Pictures/pkb copy.png");
-} */
 
 .App {
   text-align: center;
@@ -79,6 +73,22 @@ input {
 .searchButton:active {
   transform: scale(0.9);
 }
+.shapes {
+  display: flex;
+}
+/* .leftSquare {
+  background-color: #9e9e9e;
+  height: 270px;
+  width: 300px;
+  justify-content: flex-start;
+}
+.rightRectangle {
+  background-color: #9e9e9e;
+  height: 270px;
+  width: 300px;
+  justify-content: flex-end;
+  align-content: flex-end;
+} */
 .listImagePos {
   display: flex;
   align-content: space-between;
@@ -88,107 +98,60 @@ input {
   margin: 0%;
   border: 0px;
 }
+.infoBox {
+  background-color: #e4e4e4;
+  width: 450px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+}
 li {
   list-style-type: none;
   display: flex;
   align-items: flex-start;
-  color: rgb(0, 0, 0);
+  color: rgb(24, 24, 24);
   -webkit-text-stroke: 0.5px rgb(0, 0, 0);
-  font-size: 45px;
-  line-height: 60px;
+  font-size: 30px;
+  line-height: 40px;
+  text-shadow: 1.5px 1.5px #878787;
 }
 
 .pokemonImage {
   width: 360px;
   height: 360px;
   justify-content: flex-end;
+  /* transform: skew(-20deg); */
 }
 .shinyPokemonImage {
   width: 360px;
   height: 360px;
   justify-content: flex-end;
 }
+.pokedexBgShape {
+  height: 35vh;
+  width: 90vw;
+  padding: 0%;
+  margin: 0%;
+}
+/* .parallelogram {
+  background-color: #9e9e9e;
+  width: 300px;
+  height: 330px;
+  transform: skew(20deg);
+} */
+
 .typesImageClass {
   width: 130px;
   height: 40px;
-
-  border-radius: 24px;
   color: white;
   font-size: 20px;
   border-color: #000000;
   -webkit-text-stroke: 0.4px rgb(0, 0, 0);
   letter-spacing: 0.8px;
-
-  border-width: 0 0 3px;
-  /* For providing border to the element */
-  border: 0.5px solid;
-  /* For Padding */
   padding: 7px;
-  /* Defining box-shadow property inset */
+  margin-top: 3px;
   box-shadow: 4px 3px 4px 3px rgba(244, 244, 244, 0.46) inset;
-  /* box-sizing: border-box; */
 }
-
-/* CSS */
-/* .button-19 {
-  appearance: button;
-  background-color: #1899d6;
-  border: solid transparent;
-  border-radius: 16px;
-  border-width: 0 0 4px;
-  box-sizing: border-box;
-  color: #ffffff;
-  cursor: pointer;
-  display: inline-block;
-  font-family: din-round, sans-serif;
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: 0.8px;
-  line-height: 20px;
-  margin: 0;
-  outline: none;
-  overflow: visible;
-  padding: 13px 16px;
-  text-align: center;
-  text-transform: uppercase;
-  touch-action: manipulation;
-  transform: translateZ(0);
-  transition: filter 0.2s;
-  user-select: none;
-  -webkit-user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
-  width: 100%;
-}
-
-.button-19:after {
-  background-clip: padding-box;
-  background-color: #1cb0f6;
-  border: solid transparent;
-  border-radius: 16px;
-  border-width: 0 0 4px;
-  bottom: -4px;
-  content: "";
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: -1;
-}
-
-.button-19:main,
-.button-19:focus {
-  user-select: auto;
-}
-
-.button-19:hover:not(:disabled) {
-  filter: brightness(1.1);
-  -webkit-filter: brightness(1.1);
-}
-
-.button-19:disabled {
-  cursor: auto;
-} */
 
 .imageButtonPos {
   display: flex;
@@ -199,7 +162,81 @@ li {
   flex-direction: row;
   justify-content: space-around;
 }
+.emptyPage {
+  text-align: center;
+  color: white;
+}
+.shinyNormalPos {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 
+.normalButton {
+  width: 50%;
+  margin: 10px;
+  padding: 15px 30px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 6px;
+  display: block;
+  border: 0px;
+  font-weight: 700;
+  box-shadow: 0px 0px 14px -7px #2b2b2b;
+  background-color: #181818;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.normalButton:hover {
+  background-position: right center;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.normalButton:active {
+  transform: scale(0.95);
+}
+.shinyButton {
+  width: 50%;
+  margin: 10px;
+  padding: 15px 30px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 6px;
+  display: block;
+  border: 0px;
+  font-weight: 700;
+  box-shadow: 0px 0px 14px -7px #2b2b2b;
+  background-image: linear-gradient(
+    45deg,
+    #2e2e2e 0%,
+    #c8c8c8 51%,
+    #181818 100%
+  );
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.shinyButton:hover {
+  background-position: right center;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.shinyButton:active {
+  transform: scale(0.95);
+}
 /* media query for mobile size accessibility 
 Move input to center
 resize button
@@ -240,7 +277,7 @@ then list of stats  */
     display: flex;
     align-content: space-between;
     justify-content: space-evenly;
-    flex-direction: column-reverse;
+    flex-direction: column;
     padding: 0%;
     margin: 0%;
     border: 0px;
@@ -249,15 +286,25 @@ then list of stats  */
     list-style-type: none;
     display: flex;
     align-items: flex-start;
-    color: rgb(0, 0, 0);
     -webkit-text-stroke: 0.5px rgb(0, 0, 0);
-    font-size: 25px;
-    line-height: 45px;
+    font-size: 20px;
+    line-height: 40px;
   }
 
   .pokemonImage {
-    width: 360px;
-    height: 360px;
-    justify-content: flex-end;
+    width: 320px;
+    height: 320px;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    left: 7vw;
+  }
+
+  .infoBox {
+    background-color: #e4e4e4;
+    width: 380px;
+    height: 330px;
+    display: flex;
+    flex-direction: column;
   }
 }
